@@ -1,0 +1,32 @@
+program voos;
+
+uses crt;
+var n_vol, n_vol2, aeronave: array[1..3] of string;
+var compra, capacidade: array [1..3] of integer;
+i: integer;
+BEGIN
+	for i:=1 to 3 do
+		begin
+			writeln ('digite um numero de vol:');
+			readln (n_vol[i]);
+			writeln ('digite a aeronave:');
+			readln (aeronave[i]);
+		end;
+	while true do
+		begin
+		capacidade[i]:= 3;
+		writeln ('escreva o numero de vol: ');
+		readln(n_vol2[i]);
+		if n_vol[i] <> n_vol2[i] then
+		begin
+			writeln ('deseja comprar? (1 para sim - 2 para nao)');
+			readln (compra[i]);
+				if compra[i] = 1 then 
+				begin
+				capacidade[i]:= capacidade[i] - 1;
+				end;
+		end
+			else
+			writeln ('numero vol inexistente');
+		end;
+END.
